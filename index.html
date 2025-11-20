@@ -18,7 +18,7 @@
         header {
             background-color: rgba(255, 255, 255, 0.75);
             width: 30%; /* Set maximum width to 60% */
-            min-width: 500px;
+            min-width: 300px;
             text-align: center;
             margin: 0 auto;
             border-radius: 100px;
@@ -54,7 +54,9 @@
             font-weight: 600;
             justify-content: center; 
             width: 50%; /* Set maximum width to 60% */
-            min-width: 540px;
+            min-width: 340px;
+            flex-wrap: wrap;         /* allows wrapping on very narrow screens */
+            gap: clamp(5px, 3vw, 30px); /* spacing between links responsive */
             background-color: rgba(255, 255, 255, 0.9);
             padding: 15px 0; 
             margin: 0 auto; 
@@ -66,7 +68,7 @@
             padding: 30px 70px 40px 70px;
             background-color: rgba(255, 255, 255, 0.75);
             width: 70%; /* Set maximum width to 60% */
-            min-width: 400px;
+            min-width: 200px;
             margin: 0 auto; /* Center content */
             border-radius: 100px;
             margin-top: 20px;    /* space outside, above the section */
@@ -114,7 +116,7 @@
         .publication-links {
 	    display: flex;
 	    /* justify-content: space-between; */
-        gap: 50px; 
+        gap: clamp(10px, 3vw, 50px); 
 	    max-width: 60%;
         }
         .publication-links a {
@@ -124,6 +126,7 @@
             padding: 5px 5px;
             border-radius: 50px;
             transition: background-color 0.3s ease;
+            white-space: nowrap;
         }
         .publication-links a:hover {
         color: #fff;
@@ -149,7 +152,7 @@
             margin: 0 15px;
             color: #003589; 
             text-decoration: none;
-            padding: 10px 10px; 
+            padding: 10px 15px; 
             border-radius: 50px;
             transition: background-color 0.3s ease; 
         }
