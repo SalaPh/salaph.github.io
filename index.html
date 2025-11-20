@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giona Sala</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            text-align: justify;
+            margin: 0;
+            padding: 0;
+            /* background-image: linear-gradient( rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) ), url('Pictures/Background.png'); */
+            background-image: linear-gradient( rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) ), url('Pictures/waves.png');
+            background-size: cover;
+            color: #000000;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.75);
+            max-width: 30%; /* Set maximum width to 60% */
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 100px;
+            padding: 10px 20px 40px 20px; 
+            margin: 0 auto; 
+            border-radius: 100px;
+            margin-top: 20px;    /* space outside, above the section */
+            margin-bottom: 20px; /* space outside, below the section */
+        }
+        h1, h2, h3 {
+            color: #000064; /* slightly off-white */
+            font-weight: 800;
+            letter-spacing: 1px;
+            /* text-shadow: 1px 2px 8px #222; */
+
+        }
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin-bottom: 10px;
+            color: #000064 ;
+        }
+        h3 {
+            margin-bottom: 5px;
+            color: #003589 ;
+            text-decoration: underline;
+            text-underline-offset: 6px;
+        }
+        nav {
+            display: flex; 
+            font-weight: 600;
+            justify-content: center; 
+            max-width: 50%; /* Set maximum width to 60% */
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 0; 
+            margin: 0 auto; 
+            border-radius: 100px;
+            margin-top: 20px;    /* space outside, above the section */
+            margin-bottom: 20px; /* space outside, below the section */
+        }
+        section {
+            padding: 30px 70px 40px 70px;
+            background-color: rgba(255, 255, 255, 0.75);
+            max-width: 70%; /* Set maximum width to 60% */
+            margin: 0 auto; /* Center content */
+            border-radius: 100px;
+            margin-top: 20px;    /* space outside, above the section */
+            margin-bottom: 40px; /* space outside, below the section */
+        }
+        section:first-child {
+            margin-top: 50px; /* Add margin to the first section */
+        }
+        img {
+            max-width: 100%; /* Make sure image does not exceed the width of its container */
+            display: block; /* Center image */
+            margin: 0 auto;
+            margin-bottom: 20px; /* Add some bottom margin to create space between image and text */
+        }
+        img.profile-pic {
+        max-width: 300px; /* Set maximum width */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Center image */
+        margin: 0 auto; /* Center horizontally */
+        margin-bottom: 20px; /* Add some bottom margin to create space between image and text */
+        
+        /* --- round --- */
+        border-radius: 50%; 
+        /* --------------------- */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        footer {
+            font-size: 80%;
+            background-color: rgba(255, 255, 255, 0.75);
+            color: #000000;
+            position: fixed;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 200px;
+            text-align: right;
+            bottom: 0;
+            width: 98%;
+        }
+        .hidden {
+            display: none; /* Hide the section by default */
+        }
+        .publication-links {
+	    display: flex;
+	    /* justify-content: space-between; */
+        gap: 50px; 
+	    max-width: 60%;
+        }
+        .publication-links a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #00A0D2;
+            padding: 5px 5px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+        .publication-links a:hover {
+        color: #fff;
+        background-color: #006BAD;
+        }
+        .publication-links a:active {
+        color: #006BAD;
+        }
+        a {
+            color: #00A0D2; /* Blue color for regular links */
+            text-decoration: none; /* Remove underline */
+        }
+        /* Style for hovered links */
+        a:hover {
+            color: #006BAD; /* Dark blue color for hovered links */
+        }
+        /* Style for active (clicked) links */
+        a:active {
+            color: #fff; /* Red color for clicked links */
+        }
+        nav a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #003589; 
+            text-decoration: none;
+            padding: 10px 40px; 
+            border-radius: 50px;
+            transition: background-color 0.3s ease; 
+        }
+        nav a:hover {
+            color: #fff; 
+            background-color: #003589;
+        }
+        nav a:active{
+            color: #003589;
+        }
+        .publications-list {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0; /* Remove default padding */
+        }
+        .publications-list li {
+            position: relative; /* Position relative for custom bullet */
+            padding-left: 30px; /* Space for the custom bullet */
+            margin-bottom: 10px; /* Space between list items */
+        }
+        .publications-list li::before {
+            content: ''; /* No text content */
+            position: absolute; /* Position absolute for placing bullet */
+            left: 0; /* Position bullet to the left */
+            top: 50%; /* Center the image vertically */
+            transform: translateY(-50%); /* Center the image vertically */
+            width: 20px; /* Width of the image */
+            height: 20px; /* Height of the image */
+            background-image: url('Pictures/GWringdown.png'); /* Path to the black hole image */
+            background-size: contain; /* Ensure the image fits within the specified width/height */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+        }
+        .author {
+            color: #006BAD; /* light grey, adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Giona Sala</h1>
+        <p>PhD Student, RWTH Aachen</p> 
+    </header>
+    <nav>
+        <a href="#about" onclick="toggleSection('about')">About</a>
+        <a href="#research" onclick="toggleSection('research')">Research</a>
+        <a href="#publications" onclick="toggleSection('publications')">Publications</a>
+        <a href="#contact" onclick="toggleSection('contact')">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <img class="profile-pic" src="Pictures/MyPic.jpg" alt="Profile Picture">
+        <p>I am member of the Institute for Theoretical Particle Physics and Cosmology (TTK) at RWTH Aachen, 
+            pursuing a PhD under the supervision of Professor Julien Lesgourgues. 
+        <p> My passion for physics has developed over the years and has now converged towards cosmology and astrophysics, 
+            with a particular emphasis on gravitational-wave probes and observations.
+            After obtaining a Bachelor degrees in Physics at ETH Zurich (2020), I moved to Lausanne to obtain
+            a Master of Science in Physics from EPFL (2023). 
+            While my courses were mainly focused on particle physics, 
+            I became increasingly interested in cosmology after taking courses in general relativity, astrophysics, 
+            and the thermal history of the Universe, 
+            which led me to write my Master’s thesis on primordial black holes at the University of Geneva.
+            Currently, my doctoral research is focused on leveraging the potential of gravitational wave observations 
+            for cosmology. 
+            My work is strictly related to future measurement from planned gravitational waves detectors 
+            specifically MAGIS, the Einstein Telescope, and LISA.
+        </p>
+
+            
+          <div class="publication-links">
+            <a href="PDFs/CV.pdf" target="_blank">CV</a>
+            <a href="https://github.com/SalaPh" target="_blank">GitHub</a>
+    </section>
+    <section id="research" class="hidden">
+        <h2>Research</h2>
+        <h3>Cosmological parameter inference</h3>
+        <p> The observation of our cosmos are rapidly advancing, and so are the techniques to infer the fundamental parameters of cosmology. 
+            A very powerful tool for this objective is the cross-correlation of different probes.
+            One of my current research objectives is to enhance cross-correlation techniques, both with Monte Carlo Markov Chain simulation that with
+            Fisher analysis, in order to exploit the complementarity of various measurements and improve our ability to infer cosmological parameters.
+            In a recent preprint available on on arXiv: <a href="https://arxiv.org/abs/2510.19913">arXiv:2510.19913 [gr-qc]</a>,
+            I explore the potential of the rapidly growing number of gravitational wave event detections 
+            as a complementary tracer of matter overdensity, in addition to galaxy clustering.
+            </p>
+        <h3>White dwarf binaries with gravitational waves</h3>
+        <p> While neutron star binaries and binary black holes have been studied in depth and already measured with gravitational waves detectors,
+            white dwarf binaries are other compact objects that are often overlooked in the gravitational waves community,
+             but are equally exciting. 
+             In my recent work, in preprint on arXiv: <a href="https://arxiv.org/abs/2510.08699">arXiv:2510.08699 [astro-ph.CO]</a>,
+            I looked at the possibility of detecting their gravitational wave signature with future atom interferometers. 
+            The current sensitivity estimation are very promising, 
+            anticipating many detection of white dwarf mergers and their consequent, visible, final events, opening a new window on multi-messenger astronomy. </p>
+        <h3>Gravitational wave background</h3>
+        <p> I am personally convinced that gravitational wave astronomy represent the new frontier of observational cosmology, 
+            and the possibility of detecting a cosmological background is one of the most exciting topic of our times.
+            I am therefore studying the various contributions to the stochastic gravitational wave background and 
+            working on new techniques to recognise them.
+        </p>
+        <h2>Previous Projects</h2>
+        <h3>Primordial black holes clustering</h3>
+        I wrote my Master's thesis under the supervision of Professor Antonio Riotto. During this period I worked on the implications 
+        of primordial black holes at high redshift. More specifically, I studied the possibility of clustering and how this effect would 
+        influence structure formation.
+        Having previously engaged with this research, I am particularly eager about returning to work on
+        the phenomenology of primordial black holes.
+        </section>
+    <section id="publications" class="hidden">
+        <h2>External links</h2>
+        <div class="publication-links">
+        <a href="https://inspirehep.net/authors/3068368" target="_blank">iNSPIRE HEP</a>
+		<a href="https://orcid.org/0009-0001-3716-862X" target="_blank">ORCID</a>
+    	</div>
+        <h2>Publications</h2>
+        <!-- <h3>Papers</h3> -->
+        <ul class="publications-list">
+            <li><b><span class="author">Sala, G.</span></b>, Brandenstein, C., Baum, S., Graham, P.W. (2025). <em>Detecting White Dwarf Binary Mergers with Gravitational Waves</em>. <a href="https://arxiv.org/abs/2510.19913">arXiv:2510.19913 [gr-qc]</a> </li>
+            <li><b><span class="author">Sala, G.</span></b>, Cuoco, A, Lesgourgues, J, Revis, K.-R., Valbusa Dall'Armi, L., Casas, S. (2025). <em>Inferring cosmological parameters from galaxy and dark sirens cross-correlation</em>. <a href="https://arxiv.org/abs/2510.08699">arXiv:2510.08699 [astro-ph.CO]</a> </li>
+        </ul>
+        <h2>Conference contributions</h2>
+        <h3>Talks</h3>
+        <ul class="publications-list">
+            <li><b><span class="author">Sala, G.</span></b>,  <em>Inferring Cosmological Parameters from the Cross-Correlation of Gravitational Wave and Electromagnetic Observations. </em> Invisibles25 Workshop, CERN, 2nd September, 2025,  <a href="https://indico.cern.ch/event/1454720/contributions/6563775/" > slides</a>.</li>
+            <li><b><span class="author">Sala, G.</span></b>,  <em>Inferring cosmological parameters from galaxy and dark sirens cross-correlation.</em> 5th EuCAPT Annual Symposium, CERN (online), 7th May, 2025,  <a href="https://indico.cern.ch/event/1515773/contributions/6467826/" > recording</a>.</li>
+        </ul>
+        <h3>Posters</h3>
+        <ul class="publications-list">
+            <li><b><span class="author">Sala, G.</span></b>,  <em>Inferring Cosmological Parameters from the Cross-Correlation of Gravitational Wave and Electromagnetic Observations. </em> Invisibles25 Workshop, CERN, 1-5 September, 2025,  <a href="PDFs/Poster_Invisibles.pdf" target="_blank"> PDF</a>.</li>
+            <li><b><span class="author">Sala, G.</span></b>,  <em>Inferring cosmological parameters from galaxy and dark sirens cross-correlation.</em> WE-Heraeus-Seminar: new windows on the Universe, Kitzbühel, 18-21 May, 2025,  <a href="PDFs/Poster_Kitzbuehel.pdf" target="_blank"> PDF</a>.</li>
+        </ul>
+        <h2>Master's thesis</h2>
+        <ul class="publications-list">
+            <li><b><span class="author">Sala, G.</span></b>, (2023). <em>Implications of Primordial Black Holes physics at high redshifts</em>. <a href="PDFs/Master-Giona_Sala.pdf" target="_blank"> PDF</a>. </li>
+        </ul>
+    </section>
+    <section id="contact" class="hidden">
+        <h2>Contact</h2>
+        <h3>Giona Sala</h3>
+        <p> Institute for Theoretical Particle Physics and Cosmology (TTK)<br>
+            Rheinisch-Westfälische Technische Hochschule (RWTH) Aachen<br>
+            Otto-Blumentahl-Straße 12 <br>
+            52074 Aachen<br>
+            Germany</p>
+        <p>Office: MP116 </p>
+        <h3>Email</h3>
+        <p>gsala@physik.rwth-aachen.de</p>
+    </section>
+    <footer>
+        <!-- &copy; 2025 Giona Sala, Background obtained from <a href="https://gemini.google.com"> Gemini</a>. -->
+        <!-- &copy; 2025 Giona Sala,  -->
+        Background obtained from <a href="https://wallhaven.cc/w/j52rdp"> Wallhaven</a>.
+    </footer>
+    <script>
+        function toggleSection(sectionId) {
+            var sections = document.getElementsByTagName('section');
+            for (var i = 0; i < sections.length; i++) {
+                if (sections[i].id === sectionId) {
+                    sections[i].classList.remove('hidden');
+                } else {    
+                    sections[i].classList.add('hidden');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('Immerse25')) {
+                toggleSection('Immerse25');
+            }
+            else if (urlParams.has('Animations')) {
+                toggleSection('Animations');
+            }
+            else if (urlParams.has('CamVision25')) {
+                toggleSection('CamVision25');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
