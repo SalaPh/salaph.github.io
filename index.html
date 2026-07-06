@@ -12,18 +12,18 @@
             margin: 0;
             padding: 0;
             /* background-image: linear-gradient( rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) ), url('Pictures/Background.png'); */
-            background-image: linear-gradient( rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) ), url('Pictures/waves.png');
+            background-image: linear-gradient( rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) ), url('Pictures/Canada-12.jpg');
             background-size: cover;
             color: #000000;
         }
         header {
-            background-color: rgba(255, 255, 255, 0.75);
+            background-color: rgba(230, 240, 255, 0.9);
             width: 30%; /* Set maximum width to 60% */
             min-width: 380px;
             text-align: center;
             margin: 0 auto;
             border-radius: 100px;
-            padding: 10px 20px 40px 20px; 
+            padding: 10px 20px 20px 20px; 
             margin: 0 auto; 
             border-radius: 100px;
             margin-top: 20px;    /* space outside, above the section */
@@ -37,7 +37,7 @@
 
         }
         h1 {
-            margin-top: 50px;
+            margin-top: 20px;
             margin-bottom: 10px;
         }
         h2 {
@@ -60,6 +60,7 @@
             gap: clamp(20px, 3vw, 40px); /* spacing between links responsive */
             background-color: rgba(255, 255, 255, 0.9);
             padding: 15px 0; 
+            row-gap: 0px;       /* kill vertical gap between rows */
             margin: 0 auto; 
             border-radius: 100px;
             margin-top: 20px;    /* space outside, above the section */
@@ -67,13 +68,13 @@
         }
         section {
             padding: 30px 70px 40px 70px;
-            background-color: rgba(255, 255, 255, 0.75);
+            background-color: rgba(230, 240, 255, 0.8);
             width: 70%; /* Set maximum width to 60% */
             min-width: 280px;
             margin: 0 auto; /* Center content */
             border-radius: 100px;
             margin-top: 20px;    /* space outside, above the section */
-            margin-bottom: 40px; /* space outside, below the section */
+            margin-bottom: 20px; /* space outside, below the section */
         }
         section:first-child {
             margin-top: 50px; /* Add margin to the first section */
@@ -84,16 +85,20 @@
             margin: 0 auto;
             margin-bottom: 20px; /* Add some bottom margin to create space between image and text */
         }
+
         img.profile-pic {
-        max-width: 300px; /* Set maximum width */
-        height: auto; /* Maintain aspect ratio */
-        display: block; /* Center image */
-        margin: 0 auto; /* Center horizontally */
-        margin-bottom: 20px; /* Add some bottom margin to create space between image and text */
+            float: right;
+            margin: 0 0 20px 30px;  /* space to the left and bottom of the image */
+            max-width: 250px;
         
-        /* --- round --- */
-        border-radius: 50%; 
-        /* --------------------- */
+            /* --- round --- */
+            border-radius: 50%; 
+            /* --------------------- */
+        }
+        section::after {
+            content: '';
+            display: block;
+            clear: both;
         }
         ul {
             list-style-type: none;
@@ -196,80 +201,209 @@
     </header>
     <nav>
         <a href="#about" onclick="toggleSection('about')">About</a>
-        <a href="#research" onclick="toggleSection('research')">Research</a>
+        <a href="#interests" onclick="toggleSection('interests')">Interests</a>
         <a href="#publications" onclick="toggleSection('publications')">Publications</a>
+        <!-- <a href="#interests2" onclick="toggleSection('interests2')">Other Interests</a> -->
         <a href="#contact" onclick="toggleSection('contact')">Contact</a>
     </nav>
     <section id="about">
         <h2>About Me</h2>
         <img class="profile-pic" src="Pictures/MyPic.jpg" alt="Profile Picture">
-        <p>I am member of the Institute for Theoretical Particle Physics and Cosmology (TTK) at RWTH Aachen, 
-            pursuing a PhD under the supervision of Professor Julien Lesgourgues. 
-        <p> My passion for physics has developed over the years and has now converged towards cosmology and astrophysics, 
-            with a particular emphasis on gravitational-wave probes and observations.
-            After obtaining a Bachelor degrees in Physics at ETH Zurich (2020), I moved to Lausanne to pursue
-            a Master of Science in Physics from EPFL (2023). 
-            While my courses were mainly focused on particle physics, 
-            I became increasingly interested in cosmology after taking courses in general relativity, astrophysics, 
-            and the thermal history of the Universe, 
-            which led me to write my Master’s thesis on primordial black holes at the University of Geneva.
-            Currently, my doctoral research is focused on leveraging the potential of gravitational wave observations 
-            for cosmology. 
-            My work is strictly related to future measurement from planned gravitational waves detectors 
-            specifically MAGIS, the Einstein Telescope, and LISA.
+        <p> I am a Swiss cosmologist and physicist with 
+            a varied spectrum of scientific interests.
+            I was born and raised in the Italian side of Switzerland and grew up very fond
+            of the outdoors, which made me curious about the surrounding world
+            and the forces of nature but also led me to enjoy spending time 
+            in the mountains, hiking and skiing.
+
+        <p> Currently in the final stretch of my PhD at the Institute for Theoretical Particle Physics and Cosmology (TTK) at RWTH Aachen, 
+            my research sits at the intersection of gravitational wave (GW) phenomenology and cosmology.
+            I am convinced that the rapidly growing field of GW astronomy will be revolutionary 
+            for the understanding of our Universe, and I am happy to be part of this effort.
+            In my work, I like to take an observational perspective, 
+            referencing to current and forthcoming experiments. 
+            My most recent projects featured forecasts on GW measurements
+            with MAGIS, LVK and ET, and studied their impact in advancing our understanding astrophysical processes
+            and improving cosmological inference.
+
+
+        <p> After obtaining a Bachelor degrees in Physics at ETH Zurich (2020), I moved to Lausanne to pursue
+            a more interdisciplinary Master at EPFL (2023),
+            with major in theoretical physics,
+            combined with a minor in space technologies.
+            During my studies I also spent a semester abroad at the University of Toronto, 
+            and wrote my thesis at the University of Geneva with Prof. Antonio Riotto.
+            The next step led to me Aachen, for a PhD in cosmology supervised by Dr. Sebastian Baum 
+            and Prof. Julien Lesgourgues.
+
+        <p> I am also passionate about more applied sides of physics, especially climate sciences
+            geophysics and space research and industry,
+            about which I like to keep myself updated and expand my knowledge through a variety of readings.
+            Furthermore, I care deeply about fighting climate change and preserving the health of our planet.
+
+        <p> In my free time I have several hobbies.
+            During the good season I enjoy hiking, explore diverse expressions of photography
+            and take a swim in every lake, river or sea I encounter, 
+            while the rest of the year I keep busy with different winter sports,
+            from skiing to ice hockey.
+            In addition, I never say no to a good time paired with a nice barbecue, cheese,
+            or wine.
+        
+        <p> Feel free to navigate my website and check out my linked CV for more details about myself.
+
         </p>
 
             
           <div class="publication-links">
             <a href="PDFs/CV.pdf" target="_blank">CV</a>
-            <a href="https://github.com/SalaPh" target="_blank">GitHub</a>
     </section>
-    <section id="research" class="hidden">
+    <section id="interests" class="hidden">
         <h2>Research</h2>
         <h3>Cosmological parameter inference</h3>
-        <p> The observation of our cosmos are rapidly advancing, and so are the techniques to infer the fundamental parameters of cosmology. 
-            A very powerful tool for this objective is the cross-correlation of different probes.
-            One of my current research objectives is to enhance cross-correlation techniques, both with Monte Carlo Markov Chain simulation that with
-            Fisher analysis, in order to exploit the complementarity of various measurements and improve our ability to infer cosmological parameters.
-            In a recent preprint available on on arXiv: <a href="https://arxiv.org/abs/2510.19913">2510.19913 [gr-qc]</a>,
-            I explore the potential of the rapidly growing number of gravitational wave event detections 
-            as a complementary tracer of matter overdensity, in addition to galaxy clustering.
-            </p>
+        <p> The observation of our cosmos is rapidly advancing, and so are the techniques to infer the fundamental parameters of cosmology. 
+            A very powerful tool for this objective is the cross-correlation of different probes,
+            which is free of many systematic effects and can be used to break degeneracies between parameters.
+            One of my current research objectives is to enhance cross-correlation techniques, 
+            by correlating a multitude of cosmological probes,
+            and with a particular focus on studying the value added by future gravitational wave (GW) catalogues.
+            In a recent paper <a href="https://doi.org/10.1088/1475-7516/2026/05/095">JCAP 05 (2026) 095</a>,
+            I explore the potential of the next generation of laser interferometers
+            in observing compact binary coalescences (CBCs) to infer the Hubble constant,
+            by comparing two complementary measurements of matter overdensities:
+            one from galaxy cluster surveys, the other from forecasted GW catalogues. </p>
         <h3>White dwarf binaries with gravitational waves</h3>
-        <p> While neutron star binaries and binary black holes have been studied in depth and already measured with gravitational waves detectors,
-            white dwarf binaries are other compact objects that are often overlooked in the gravitational waves community,
-             but are equally exciting. 
-             In my recent work, in preprint on arXiv: <a href="https://arxiv.org/abs/2510.08699">2510.08699 [astro-ph.CO]</a>,
-            I looked at the possibility of detecting their gravitational wave signature with future atom interferometers. 
-            The current sensitivity estimation are very promising, 
-            anticipating many detection of white dwarf mergers and their consequent, visible, final events, opening a new window on multi-messenger astronomy. </p>
-        <h3>Gravitational wave background</h3>
-        <p> I am personally convinced that gravitational wave astronomy represent the new frontier of observational cosmology, 
-            and the possibility of detecting a cosmological background is one of the most exciting topic of our times.
-            I am therefore studying the various contributions to the stochastic gravitational wave background and 
-            working on new techniques to recognise them.
+        <p> While binary neutron stars (BNSs) and binary black holes (BBHs) have been studied in depth and already measured with GWs detectors,
+            white dwarf binaries (WDBs) are more mysterious and elusive compact objects that are often overlooked in the GWs community,
+            but equally exciting. 
+            Atom interferometry is an innovative quantum technology for GW astronomy being currently developed, 
+            that will provide the sensitivity required to observe individual WDB mergers.
+            My recent work <a href="https://link.aps.org/doi/10.1103/dbbd-7v7s">Phys. Rev. D 113 (2026) 123022</a>,
+            studies the possibility of resolving WDBs' GW signature with these instruments.
+            The current sensitivity estimations are very promising, 
+            anticipating many yearly detections of WDB mergers
+            and their consequent, visible, final events, opening a new window on multi-messenger astronomy,
+            and providing valuable insights on the origin of Type Ia Supernovae. </p>
+        <h3>Stochastic gravitational wave background</h3>
+        <p> The fact that we can detect GW is already a pretty extraordinary result.
+            The idea that we might be able to observe GW produced in an infant Universe is totally mind-blowing.
+            It seems that the detection of a stochastic gravitational wave background (SGWB) 
+            is within reach of the forthcoming detectors,
+            accompanied by the challenge of disentangling 
+            astrophysical and cosmological contributions to the signal.
+            I am very interested in getting involved in this effort
+            and eager to contribute to the GW community's push towards the first detection of the SGWB.
+            Currently, I am investigating methods to overcome this obstacle in the LISA frequency band,
+            with particular focus on studying and reconstructing the anisotropies
+            of the different components of the SGWB.
         </p>
-        <h2>Previous Projects</h2>
         <h3>Primordial black holes clustering</h3>
-        I wrote my Master's thesis under the supervision of Professor Antonio Riotto. During this period I worked on the implications 
-        of primordial black holes at high redshift. More specifically, I studied the possibility of clustering and how this effect would 
-        influence structure formation.
-        Having previously engaged with this research, I am particularly eager about returning to work on
-        the phenomenology of primordial black holes.
+        <p> Primordial black holes (PBHs) are an exciting candidate for dark matter.
+            During my Master's thesis, written at the University of Geneva, I studied the implications of having a presence of PBHs
+            at high redshifts and the possibility that their clustering could influence early 
+            galaxy formation, as observed by James Webb Space Telescope (JWST).
+            PBHs are an active field of research that I am very fond of, and
+            I am willing to further explore it in future works.
+        </p>
+        <h2>Other interests</h2>
+        <h3>Space</h3>
+        <p> The same curiosity that drives my research in cosmology and astrophysics 
+            has always also fuelled my interest in space exploration and technologies.
+            For my Master, I specifically moved to Lausanne to be able to pursue
+            both my major in physics and a minor in space technologies, 
+            unique in Switzerland at the time.
+            This programme gave me the chance to learn about
+            system engineering, mission and spacecraft design, 
+            and aerospace engineering.
+            In addition,
+            I complemented this knowledge with hands-on experience
+            in the student-led rocket team, both at ETH and EPFL,
+            and the spacecraft team at EPFL,
+            where I had the opportunity to work
+            with companies and celebrities of the space sector, like Prof. Claude Nicollier, 
+            the first Swiss astronaut. 
+            While my work now focuses on the more theoretical side of space, 
+            I remain very interested in aerospace field,
+            and ready to jump on any opportunity 
+            that might combine multiple interests. </p>
+        <h3>Geophysics and climate sciences</h3>
+        <p> I have always been very passionate about anything 
+            nature related: atmospheric phenomena, 
+            geological processes, planetary science, flora and fauna, etc. 
+            which I enjoy exploring on a recreational level, 
+            as I never had the chance to study it academically.
+            At the same time, I am scientifically curious about any physical processes 
+            of the Universe, from cosmological to
+            planetary and ecosystem scales.
+            Geophysics and climate science particularly interest me,
+            as they sit at the intersection of my physics background and personal interests,
+            and I am always eager to engage with these topics and learn more through independent reading.
+            </p>
         </section>
+    <!-- <section id="interests2" class="hidden">
+        <h3>Space</h3>
+        <p> The same curiosity that drives my research in cosmology and astrophysics 
+            has always also fuelled my interest in space exploration and technologies.
+            For my Master, I specifically moved to Lausanne to be able to pursue
+            both my major in physics and a minor in space technologies, 
+            unique in Switzerland at the time.
+            This programme gave me the chance to learn about
+            system engineering, mission and spacecraft design, 
+            and aerospace engineering.
+            In addition,
+            I complemented this knowledge with hands-on experience
+            in the student-led rocket team, both at ETH and EPFL,
+            and the spacecraft team at EPFL,
+            where I had the opportunity to work
+            with companies and celebrities of the space sector, like Prof. Claude Nicollier, 
+            the first Swiss astronaut. 
+            While my work now focuses on the more theoretical side of space, 
+            I remain very interested in aerospace field,
+            and ready to jump on any opportunity 
+            that might combine multiple interests. </p>
+        <h3>Climate sciences</h3>
+        <p> I have always been very passionate about understanding 
+            the forces of nature and the environment we live in.
+            I am fascinated by the complexity of the climate system, 
+            and how every player has its role in it.
+            My knowledge of the field is limited to a few courses, 
+            personal readings, and brief work experiences,
+            which allows me to keep learning about many aspects of climate sciences,
+            spanning from topics closer to my area of expertise,
+            such as the physics of aerosols or wind patterns,
+            to subject that I am particularly invested in, 
+            as the impact of climate change in extreme weather events, 
+            to extraordinary self-adjusting nature driven processes, 
+            like the role of sperm whale population in regulating carbon levels in the oceans
+            and atmosphere. 
+            While this is a broad field, and I just started scratching its surface,
+            I am eager to find opportunities to discuss, 
+            research and deepen my knowledge of this interesting subject. </p>
+        <h3>Geophysics</h3>
+        <p> Following up on my curiosity for natural phenomena, 
+            I also have a strong interest in geophysics,
+            I have  a strong interest for ïf on one side 
+            recalls the memory of all my physics courses 
+            sesmic stuff relevant for GW detections
+            follow up of the previous point
+            planetary science
+             </p>
+        </section> -->
     <section id="publications" class="hidden">
         <h2>External links</h2>
         <div class="publication-links">
         <a href="https://inspirehep.net/authors/3068368" target="_blank">iNSPIRE HEP</a>
 		<a href="https://orcid.org/0009-0001-3716-862X" target="_blank">ORCID</a>
+        <a href="https://github.com/SalaPh" target="_blank">GitHub</a>
     	</div>
         <h2>Publications</h2>
-        <!-- <h3>Papers</h3> -->
-        <ul class="publications-list">
+        <h3>Primary contribution</h3>
+        <!-- <ul class="publications-list"> -->
             <li><b><span class="author">Sala, G.</span></b>, Brandenstein, C., Baum, S., Graham, P.W. <em>Detecting White Dwarf Binary Mergers with Gravitational Waves</em>. <a href="https://link.aps.org/doi/10.1103/dbbd-7v7s">Phys. Rev. D 113 (2026) 123022</a>.</li>
             <!-- <li><b><span class="author">Sala, G.</span></b>, Brandenstein, C., Baum, S., Graham, P.W. (2025). <em>Detecting White Dwarf Binary Mergers with Gravitational Waves</em>. <a href="https://arxiv.org/abs/2510.19913">arXiv:2510.19913 [gr-qc]</a>.</li> -->
             <li><b><span class="author">Sala, G.</span></b>, Cuoco, A., Lesgourgues, J., Revis, K.-R., Valbusa Dall'Armi, L., Casas, S. <em>Inferring cosmological parameters from galaxy and dark sirens cross-correlation</em>. <a href="https://doi.org/10.1088/1475-7516/2026/05/095">JCAP 05 (2026) 095</a>.</li>
             <!-- <li><b><span class="author">Sala, G.</span></b>, Cuoco, A., Lesgourgues, J., Revis, K.-R., Valbusa Dall'Armi, L., Casas, S. (2025). <em>Inferring cosmological parameters from galaxy and dark sirens cross-correlation</em>. <a href="https://arxiv.org/abs/2510.08699">arXiv:2510.08699 [astro-ph.CO]</a>.</li> -->
+        <!-- <h3>Supporting contribution</h3> -->
+
         </ul>
         <h2>Conference contributions</h2>
         <h3>Talks</h3>
@@ -304,11 +438,11 @@
         <h3>Email</h3>
         <p><a href="mailto:gsala@physik.rwth-aachen.de"> gsala@physik.rwth-aachen.de</a> </p>
     </section>
-    <footer style="font-size: 0.8rem;"></footerstyle>
-        <!-- &copy; 2025 Giona Sala, Background obtained from <a href="https://gemini.google.com"> Gemini</a>. -->
-        <!-- &copy; 2025 Giona Sala,  -->
+    <!-- <footer style="font-size: 0.8rem;"></footerstyle>
+         &copy; 2025 Giona Sala, Background obtained from <a href="https://gemini.google.com"> Gemini</a>. 
+         &copy; 2025 Giona Sala, 
         Background obtained from <a href="https://wallhaven.cc/w/j52rdp"> Wallhaven</a>.
-    </footer>
+    </footer> -->
     <script>
         function toggleSection(sectionId) {
             var sections = document.getElementsByTagName('section');
