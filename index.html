@@ -72,7 +72,7 @@
             width: max(70%, calc(56% + 100px)); 
             min-width: 280px;
             margin: 0 auto; /* Center content */
-            border-radius: clamp(15px, 5vw, 100px);
+            border-radius: clamp(20px, 5vw, 100px);
             margin-top: 20px;    /* space outside, above the section */
             margin-bottom: 20px; /* space outside, below the section */
         }
@@ -88,9 +88,9 @@
 
         img.profile-pic {
             float: right;
-            margin: 0 0 20px 30px;  /* space to the left and bottom of the image */
-            max-width: 250px;
-        
+            margin: 0 0 20px clamp(10px, 3vw, 30px);
+            max-width: clamp(100px, 30vw, 250px);
+                    
             /* --- round --- */
             border-radius: 50%; 
             /* --------------------- */
@@ -456,7 +456,7 @@
         <p><a href="mailto:gsala@physik.rwth-aachen.de"> gsala@physik.rwth-aachen.de</a> </p>
     </section>
     <footer>
-        <span>&copy; 2026 Giona Sala.</span>
+        <span>&copy; 2026 Giona Sala</span>
         <span>Background: <a href="https://esawebb.org/images/potm2309a/">NGC 6822</a> by ESA/Webb, NASA & CSA, M. Meixner, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</span>
             <!-- &copy; 2025 Giona Sala, 
             Background obtained from <a href="https://wallhaven.cc/w/j52rdp"> Wallhaven</a>. -->
