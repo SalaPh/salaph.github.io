@@ -10,9 +10,9 @@
             font-family: Helvetica, sans-serif;
             text-align: justify;
             margin: 0;
-            padding: 0;
+            padding: 0 0 1.5rem 0;
             /* background-image: linear-gradient( rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) ), url('Pictures/Background.png'); */
-            background-image: linear-gradient( rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) ), url('Pictures/JWST_deepfield_med.jpg');
+            background-image: linear-gradient( rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) ), url('Pictures/JWST_deepfield_low.jpg');
             background-size: cover;
             color: #000000;
         }
@@ -67,7 +67,7 @@
             margin-bottom: 20px; /* space outside, below the section */
         }
         section {
-            padding: 30px 70px 40px 70px;
+            padding: clamp(15px, 3vw, 30px) clamp(20px, 5vw, 70px) clamp(20px, 4vw, 40px) clamp(20px, 5vw, 70px);
             background-color: rgba(230, 240, 255, 0.8);
             width: 70%; /* Set maximum width to 60% */
             min-width: 280px;
