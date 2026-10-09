@@ -59,11 +59,11 @@ body {
             justify-content: center; /* centers the links in each row */
             width: 50%; /* nav takes half the screen width */
             min-width: min(420px, calc(100% - 24px)); /* 420px on large screens, never wider than the screen minus 12px per side */
-            flex-wrap: wrap; /* allows links to move to a second row */
+            flex-wrap: wrap; /* links move to a new row when they don't fit */
             gap: clamp(20px, 3vw, 40px); /* spacing between links, scales with screen width from 20px to 40px */
             background-color: rgba(255, 255, 255, 0.9); /* white, slightly transparent */
             padding: 15px 0; /* 15px inner space top and bottom, none left and right */
-            row-gap: 0px; /* no vertical gap between the two rows */
+            row-gap: 0px; /* no vertical gap between rows */
             margin: 0 auto; /* centers the nav horizontally */
             border-radius: 100px; /* pill shaped corners */
             margin-top: 0; /* spacing comes from the margin below the header */
@@ -157,12 +157,6 @@ body {
         a:active {
             color: #fff; /* Red color for clicked links */
         }
-        nav::before {
-            content: ''; /* invisible element used as a line break */
-            order: 2; /* placed between the 2nd and 3rd link */
-            flex-basis: clamp(0px, calc((1000px - 100%) * 999), 100%);
-            margin-right: min(0px, max(calc(-1 * clamp(20px, 3vw, 40px)), calc((1000px - 100%) * 999)));
-    }
         nav a {
             display: inline-block; /* lets the link have padding and a background like a button */
             margin: 0 15px; /* 15px space left and right of each link */
@@ -172,9 +166,6 @@ body {
             border-radius: 50px; /* rounded hover background */
             transition: background-color 0.3s ease; /* smooth color change on hover */
             white-space: nowrap; /* link text never wraps */
-        }
-        nav a:nth-child(n+3) {
-            order: 3; /* links 3 and 4 come after the line break */
         }
         nav a:hover {
             color: #fff; /* white text on hover */
