@@ -51,20 +51,20 @@ body {
             text-underline-offset: 6px;
         }
         nav {
-            display: flex; 
+            display: grid; /* grid instead of flex, so the links form clean columns */
+            grid-template-columns: repeat(auto-fit, minmax(clamp(calc(25% - 30px), calc((500px - 100%) * 999), calc(50% - 20px)), 1fr)); /* 4 columns when the nav is wider than 500px, otherwise 2. Never 3 */
+            justify-items: center; /* centers each link inside its column */
+            column-gap: clamp(20px, 3vw, 40px); /* horizontal spacing between links, responsive */
+            row-gap: 0px; /* no vertical gap between the two rows */
             font-weight: 600;
-            justify-content: center; 
-            width: 50%; /* Set maximum width to 60% */
-            min-width: min(420px, calc(100% - 24px)); /* 420px on large screens, on phones never wider than the screen minus 12px per side */
-            flex-wrap: wrap;         /* allows wrapping on very narrow screens */
-            gap: clamp(20px, 3vw, 40px); /* spacing between links responsive */
+            width: 50%;
+            min-width: min(420px, calc(100% - 24px)); /* 420px on large screens, never wider than the screen minus 12px per side */
             background-color: rgba(255, 255, 255, 0.9);
-            padding: 15px 0; 
-            row-gap: 0px;       /* kill vertical gap between rows */
-            margin: 0 auto; 
+            padding: 15px 0;
+            margin: 0 auto;
             border-radius: 100px;
-            margin-top: 20px;    /* space outside, above the section */
-            margin-bottom: 20px; /* space outside, below the section */
+            margin-top: 20px;    /* space outside, above the nav */
+            margin-bottom: 20px; /* space outside, below the nav */
         }
         section {
             padding: clamp(15px, 3vw, 30px) clamp(20px, 5vw, 70px) clamp(20px, 4vw, 40px) clamp(20px, 5vw, 70px); /* inner space, order top right bottom left. Each value scales with screen width (vw) between a minimum (phones) and a maximum (laptops) */
@@ -110,7 +110,7 @@ body {
             left: 0; /* no effect with sticky, can be removed */
             right: 0; /* no effect with sticky, can be removed */
             padding: 2px 12px; /* 2px top and bottom, 12px left and right */
-            font-size: min(0.8rem, 1.9vw); /* 0.8rem on large screens, shrinks with the screen so the line always fits. Tune 1.9vw if the text changes */
+            font-size: min(0.875rem, 1.9vw); /* 0.875rem on large screens, shrinks with the screen so the line always fits. Tune 1.9vw if the text changes */
             white-space: nowrap; /* forbids line breaks, keeps the footer on one line */
             gap: 1em; /* minimum space between copyright and credit */
             display: flex; /* places the two spans side by side */
