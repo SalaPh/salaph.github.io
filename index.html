@@ -15,6 +15,9 @@ body {
             background-image: linear-gradient( rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25) ), url('Pictures/JWST_deepfield_low.jpg');
             background-size: cover;
             color: #000000;
+            min-height: 100dvh; /* page is at least as tall as the screen */
+            display: flex; /* stacks header, nav, sections and footer in a column */
+            flex-direction: column;
         }
         header {
             background-color: rgba(230, 240, 255, 0.9);
@@ -51,25 +54,25 @@ body {
             text-underline-offset: 6px;
         }
         nav {
-            display: grid; /* grid instead of flex, so the links form clean columns */
-            grid-template-columns: repeat(auto-fit, minmax(clamp(calc(25% - 30px), calc((500px - 100%) * 999), calc(50% - 20px)), 1fr)); /* 4 columns when the nav is wider than 500px, otherwise 2. Never 3 */
-            justify-items: center; /* centers each link inside its column */
-            column-gap: clamp(20px, 3vw, 40px); /* horizontal spacing between links, responsive */
-            row-gap: 0px; /* no vertical gap between the two rows */
-            font-weight: 600;
-            width: 50%;
+            display: flex; /* places the links side by side */
+            font-weight: 600; /* semi bold link text */
+            justify-content: center; /* centers the links in each row */
+            width: 50%; /* nav takes half the screen width */
             min-width: min(420px, calc(100% - 24px)); /* 420px on large screens, never wider than the screen minus 12px per side */
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 15px 0;
-            margin: 0 auto;
-            border-radius: 100px;
-            margin-top: 20px;    /* space outside, above the nav */
+            flex-wrap: wrap; /* allows links to move to a second row */
+            gap: clamp(20px, 3vw, 40px); /* spacing between links, scales with screen width from 20px to 40px */
+            background-color: rgba(255, 255, 255, 0.9); /* white, slightly transparent */
+            padding: 15px 0; /* 15px inner space top and bottom, none left and right */
+            row-gap: 0px; /* no vertical gap between the two rows */
+            margin: 0 auto; /* centers the nav horizontally */
+            border-radius: 100px; /* pill shaped corners */
+            margin-top: 0; /* spacing comes from the margin below the header */
             margin-bottom: 20px; /* space outside, below the nav */
         }
         section {
             padding: clamp(15px, 3vw, 30px) clamp(20px, 5vw, 70px) clamp(20px, 4vw, 40px) clamp(20px, 5vw, 70px); /* inner space, order top right bottom left. Each value scales with screen width (vw) between a minimum (phones) and a maximum (laptops) */
             background-color: rgba(230, 240, 255, 0.8);
-            width: clamp(70%, calc(55% + 180px), calc(100% - 24px)); /* 70% on large screens, grows smoothly as the screen narrows, never wider than the screen minus 12px per side */
+            width: clamp(80%, calc(55% + 180px), calc(100% - 24px)); /* 70% on large screens, grows smoothly as the screen narrows, never wider than the screen minus 12px per side */
             box-sizing: border-box; /* width includes the padding, so the box never overflows the screen */
             margin: 0 auto; /* Center content */
             border-radius: clamp(20px, 5vw, 100px); /* corner rounding: 5% of screen width, never below 20px nor above 100px */
@@ -115,6 +118,7 @@ body {
             gap: 1em; /* minimum space between copyright and credit */
             display: flex; /* places the two spans side by side */
             justify-content: space-between; /* pushes copyright left and credit right */
+            margin-top: auto; /* takes up any leftover space above, pushing the footer to the bottom */
         }
         .hidden {
             display: none; /* Hide the section by default */
@@ -153,21 +157,31 @@ body {
         a:active {
             color: #fff; /* Red color for clicked links */
         }
+        nav::before {
+            content: ''; /* invisible element used as a line break */
+            order: 2; /* placed between the 2nd and 3rd link */
+            flex-basis: clamp(0px, calc((520px - 100%) * 999), 100%); /* nav narrower than 520px: full width, forcing links 3 and 4 onto a new row. Wider: zero width */
+            margin-right: min(0px, max(calc(-1 * clamp(20px, 3vw, 40px)), calc((520px - 100%) * 999))); /* on one row, cancels the extra gap this invisible element would add. On two rows, 0 */
+        }
         nav a {
-            display: inline-block;
-            margin: 0 15px;
-            color: #003589; 
-            text-decoration: none;
-            padding: 10px 15px; 
-            border-radius: 50px;
-            transition: background-color 0.3s ease; 
+            display: inline-block; /* lets the link have padding and a background like a button */
+            margin: 0 15px; /* 15px space left and right of each link */
+            color: #003589; /* dark blue text */
+            text-decoration: none; /* no underline */
+            padding: 10px 15px; /* inner space, gives the hover background its pill size */
+            border-radius: 50px; /* rounded hover background */
+            transition: background-color 0.3s ease; /* smooth color change on hover */
+            white-space: nowrap; /* link text never wraps */
+        }
+        nav a:nth-child(n+3) {
+            order: 3; /* links 3 and 4 come after the line break */
         }
         nav a:hover {
-            color: #fff; 
-            background-color: #003589;
+            color: #fff; /* white text on hover */
+            background-color: #003589; /* dark blue background on hover */
         }
-        nav a:active{
-            color: #003589;
+        nav a:active {
+            color: #003589; /* dark blue text while clicking */
         }
         .publications-list {
             list-style-type: none; /* Remove default bullets */
