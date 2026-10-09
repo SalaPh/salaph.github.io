@@ -19,7 +19,7 @@
         header {
             background-color: rgba(230, 240, 255, 0.9);
             width: 30%; /* Set maximum width to 60% */
-            min-width: 380px;
+            min-width: min(380px, calc(100% - 64px));
             text-align: center;
             margin: 0 auto;
             border-radius: 100px;
@@ -55,7 +55,7 @@
             font-weight: 600;
             justify-content: center; 
             width: 50%; /* Set maximum width to 60% */
-            min-width: 420px;
+            min-width: min(420px, calc(100% - 24px));
             flex-wrap: wrap;         /* allows wrapping on very narrow screens */
             gap: clamp(20px, 3vw, 40px); /* spacing between links responsive */
             background-color: rgba(255, 255, 255, 0.9);
@@ -69,8 +69,8 @@
         section {
             padding: clamp(15px, 3vw, 30px) clamp(20px, 5vw, 70px) clamp(20px, 4vw, 40px) clamp(20px, 5vw, 70px);
             background-color: rgba(230, 240, 255, 0.8);
-            width: max(70%, calc(56% + 100px)); 
-            min-width: 280px;
+            width: clamp(70%, calc(55% + 180px), 100%);
+            box-sizing: border-box;
             margin: 0 auto; /* Center content */
             border-radius: clamp(20px, 5vw, 100px);
             margin-top: 20px;    /* space outside, above the section */
@@ -88,12 +88,10 @@
 
         img.profile-pic {
             float: right;
-            margin: 0 0 20px clamp(10px, 3vw, 30px);
-            max-width: clamp(100px, 30vw, 250px);
-                    
-            /* --- round --- */
-            border-radius: 50%; 
-            /* --------------------- */
+            width: clamp(clamp(200px, 30vw, 250px), calc((500px - 100%) * 999), 100%);
+            max-width: 100%;
+            margin: 0 0 20px clamp(0px, calc((100% - 500px) * 999), 30px);
+            border-radius: 50%;
         }
         section::after {
             content: '';
@@ -112,7 +110,9 @@
             left: 0;
             right: 0;
             padding: 2px 12px;
-            font-size: clamp(0.55rem, 0.8vw, 0.8rem);
+            font-size: min(0.8rem, 1.9vw);
+            white-space: nowrap;
+            gap: 1em;
             display: flex;
             justify-content: space-between;
         }
