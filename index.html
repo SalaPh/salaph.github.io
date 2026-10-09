@@ -91,9 +91,9 @@ body {
 
         img.profile-pic {
             float: right;
-            width: clamp(clamp(150px, 30vw, 250px), calc((500px - 100%) * 999), 80%); /* 100% is the text width of the section. Above 500px of text width: normal size (150px to 250px). Below: the * 999 trick jumps to full text width, so the text moves below the picture */
+            width: clamp(clamp(150px, 30vw, 250px), calc((500px - 100%) * 999), 80%); /* 100% is the text width of the section. Above 500px of text width: normal size (150px to 250px). Below: the * 999 trick jumps to 80% of the text width */
             max-width: 100%; /* never wider than the text width of the section */
-            margin: 0 0 20px clamp(0px, calc((100% - 500px) * 999), 30px); /* order top right bottom left. Left gap is 30px while text wraps around, 0 when the picture is stacked above the text */
+            margin: 0 clamp(0px, calc((500px - 100%) * 999), 10%) 20px max(min(30px, calc((100% - 500px) * 999)), min(10%, calc((500px - 100%) * 999))); /* order top right bottom left. Text wrapping around: 0 right, 30px left. Stacked: 10% on each side, which centers the picture and leaves no room for text beside it */
             border-radius: 50%;
         }
         section::after {
