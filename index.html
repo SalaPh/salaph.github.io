@@ -160,9 +160,9 @@ body {
         nav::before {
             content: ''; /* invisible element used as a line break */
             order: 2; /* placed between the 2nd and 3rd link */
-            flex-basis: clamp(0px, calc((520px - 100%) * 999), 100%); /* nav narrower than 520px: full width, forcing links 3 and 4 onto a new row. Wider: zero width */
-            margin-right: min(0px, max(calc(-1 * clamp(20px, 3vw, 40px)), calc((520px - 100%) * 999))); /* on one row, cancels the extra gap this invisible element would add. On two rows, 0 */
-        }
+            flex-basis: clamp(0px, calc((1000px - 100%) * 999), 100%);
+            margin-right: min(0px, max(calc(-1 * clamp(20px, 3vw, 40px)), calc((1000px - 100%) * 999)));
+    }
         nav a {
             display: inline-block; /* lets the link have padding and a background like a button */
             margin: 0 15px; /* 15px space left and right of each link */
